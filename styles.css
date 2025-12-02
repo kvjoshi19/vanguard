@@ -283,6 +283,10 @@ nav {
     padding: 1.5rem;
     border-radius: 12px;
     line-height: 1.4;
+    transition: transform 0.4s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
 }
 .service-card h3 {
     font-size: 1.1rem;
@@ -376,18 +380,6 @@ nav {
     font-weight: bold;
     color: var(--white);
 }
-@keyframes stepUp {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: var(--height);
-    }
-}
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
-    animation: stepUp 1s ease-in-out forwards;
-}
 #contact {
     background: var(--black); 
     padding: 3rem 0;
@@ -455,6 +447,32 @@ footer p {
 footer a {
     color: var(--blue);
     text-decoration: none;
+}
+@keyframes stepUp {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: var(--height);
+    }
+}
+/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
+.bar {
+    animation: stepUp 1s ease-in-out forwards;
+}
+@keyframes fallDownFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.reveal {
+    opacity: 0;
+    animation: fallDownFade 1s ease-out forwards;
 }
 /* MEDIA QUERIES (MEDIUM) */ 
 @media (min-width: 800px) {
