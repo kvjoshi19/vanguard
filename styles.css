@@ -159,33 +159,85 @@ h1::before {
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
 }
-#hamburger {
-    color: var(--white);
-    font-size: 2rem;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-}
-#nav-toggle {
-    display: none;
-    position: absolute;
-}
 nav {
+    background-color: var(--black);
+  }
+  nav ul {
+    width: auto;
     margin-left: auto;
-    flex: none;
-    position: absolute;
-    right: 1rem;
-    top: 4.5rem;
-}
-nav ul {
-    display: none;
-    flex-direction: column;
-    top: 100%;
-    right: 0;
-    width: 180px;
-    padding: 1rem;
-    gap: 1rem;
-}
+    margin:0;
+    padding:0;
+    list-style: none;
+    overflow: hidden;
+    text-align: right;
+    max-height: 0;
+  }
+  nav h2 {
+    visibility:hidden;
+    height:1px;
+  }
+  nav li a {
+    display:block;
+    font-family:sans-serif;
+    font-size:1rem;
+    padding:1rem;
+    text-transform:uppercase;
+    font-weight:bold;
+    text-decoration:none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+  }
+  nav a:hover, nav input:hover {
+      background-color: var(--blue);
+      color: var(--black);
+  }
+  nav label {
+      cursor: pointer;
+      display: inline-block;
+      padding: 1.5rem;
+      user-select: none;
+  }
+  label span {
+      background-color: var(--white);
+      display: block;
+      height: .25rem;
+      position: relative;
+      transition: background-color .3s ease-out;
+      width: 2rem;
+  }
+  label span:before, label span:after {
+      background: var(--white);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+  }
+  label span:before {
+      top: .75rem;
+  }
+  label span:after {
+      top: -.75rem;
+  }
+  input {
+    display:none;
+  }
+  input:checked ~ ul {
+      max-height: 500px;
+  }
+  input:checked ~ label span {
+      background: transparent;
+  }
+  input:checked ~ label span:before {
+      transform: rotate(-45deg);
+  }
+  input:checked ~ label span:after {
+      transform: rotate(45deg);
+  }
+  input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+      top: 0;
+  }
 #expertise {
     padding: 3rem 0;
 }
@@ -405,35 +457,31 @@ footer a {
         margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
         gap: 3rem;
+        flex-wrap: nowrap;
     }
-    #hamburger {
-        display: none;
-    }
-    #nav-toggle {
-        display: none;
+    header h1 {
+        white-space: nowrap;
     }
     nav {
         position: static;
-        right: auto;
-        top: auto;
-        margin-left: 12rem;
-        flex: unset;
+        margin-left: auto;
     }
     nav ul {
         display: flex;
-        flex-direction: row;
-        padding: 0;
-        margin: 0;
-        gap: 1.5rem;
+        gap: 2rem;
+        position: static;     
+        overflow: visible;    
+        max-height: none;     
+        text-align: right;
+      }
+      nav li a {
+        display:inline-block;
     }
-    nav a {
-        color: var(--blue);
-        text-decoration: none;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
+      label span, input {
+        display:none;
+      }
     .services-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -461,35 +509,31 @@ footer a {
         margin: 0 auto;
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: space-between;
         gap: 3rem;
+        flex-wrap: nowrap;
     }
-    #hamburger {
-        display: none;
-    }
-    #nav-toggle {
-        display: none;
+    header h1 {
+        white-space: nowrap;
     }
     nav {
         position: static;
-        right: auto;
-        top: auto;
-        margin-left: 24rem;
-        flex: unset;
+        margin-left: auto;
     }
     nav ul {
         display: flex;
-        flex-direction: row;
-        padding: 0;
-        margin: 0;
-        gap: 1.5rem;
+        gap: 2rem;
+        position: static;     
+        overflow: visible;    
+        max-height: none;     
+        text-align: right;
+      }
+      nav li a {
+        display:inline-block;
     }
-    nav a {
-        color: var(--blue);
-        text-decoration: none;
-        font-weight: 600;
-        text-transform: uppercase;
-    }
+      label span, input {
+        display:none;
+      }
     .services-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
