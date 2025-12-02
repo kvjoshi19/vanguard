@@ -159,7 +159,19 @@ h1 {
     cursor: pointer;
 }
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
+@keyframes floatLogo {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 h1::before {
+    animation: floatLogo 4s ease-in-out infinite;
     content: "";
     display: inline-block;
     width: 3.75rem;
