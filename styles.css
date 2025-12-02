@@ -204,7 +204,7 @@ nav {
       padding: 1.5rem;
       user-select: none;
   }
-  label span {
+  nav label span {
       background-color: var(--white);
       display: block;
       height: .25rem;
@@ -212,7 +212,7 @@ nav {
       transition: background-color .3s ease-out;
       width: 2rem;
   }
-  label span:before, label span:after {
+  nav label span:before, label span:after {
       background: var(--white);
       content: '';
       display: block;
@@ -221,28 +221,28 @@ nav {
       transition: all .2s ease-out;
       width: 100%;
   }
-  label span:before {
+  nav label span:before {
       top: .75rem;
   }
-  label span:after {
+  nav label span:after {
       top: -.75rem;
   }
-  input {
+  nav input {
     display:none;
   }
-  input:checked ~ ul {
+  nav input:checked ~ ul {
       max-height: 500px;
   }
-  input:checked ~ label span {
+  nav input:checked ~ label span {
       background: transparent;
   }
-  input:checked ~ label span:before {
+  nav input:checked ~ label span:before {
       transform: rotate(-45deg);
   }
-  input:checked ~ label span:after {
+  nav input:checked ~ label span:after {
       transform: rotate(45deg);
   }
-  input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+  nav input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
       top: 0;
   }
 #expertise {
@@ -412,8 +412,7 @@ nav {
 }
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    box-sizing: border-box;
+    width: 90%;
     padding: 1rem;
     border-radius: 5px;
     border: 3px solid var(--blue);
@@ -512,7 +511,7 @@ footer a {
       nav li a {
         display:inline-block;
     }
-      label span, input {
+      nav label span, nav input {
         display:none;
       }
     .services-grid {
@@ -564,7 +563,7 @@ footer a {
       nav li a {
         display:inline-block;
     }
-      label span, input {
+      nav label span, nav input {
         display:none;
       }
     .services-grid {
